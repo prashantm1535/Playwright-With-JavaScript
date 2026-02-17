@@ -1,5 +1,10 @@
 # 🚀 Playwright Automation Framework (JavaScript)
 
+![Playwright](https://img.shields.io/badge/Playwright-Automation-green)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
+![CI](https://img.shields.io/badge/CI-GitHub_Actions-blue)
+
+
 ## 📌 Project Overview
 
 This repository contains a structured Playwright automation framework built using JavaScript and Node.js.
@@ -143,10 +148,11 @@ The framework is designed to run in CI environments using GitHub Actions with he
 ## 👤 Author
 
 Prashant Mulge
+
 QA Automation Engineer | Playwright | JavaScript | CI/CD
 
 ---
-
+<!--
 ```
 ![Playwright](https://img.shields.io/badge/Playwright-Automation-green)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
@@ -154,3 +160,4 @@ QA Automation Engineer | Playwright | JavaScript | CI/CD
 ```
 
 ---
+-->
