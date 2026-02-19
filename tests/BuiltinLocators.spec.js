@@ -13,6 +13,6 @@ test("Buitin Locators", async ({ page }) => {
   await page.getByPlaceholder("Username").fill("Admin");
   await page.getByPlaceholder("Password").fill("admin123");
 
-  // page.getByRole() - to locate an element by its ARIA role.
+  // page.getByRole() - to locate an element by explicit & implicit accessibility attributes.
   await page.getByRole("button", { type: "submit" }).click();
 });
