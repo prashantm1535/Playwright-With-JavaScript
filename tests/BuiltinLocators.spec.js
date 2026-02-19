@@ -12,4 +12,7 @@ test("Buitin Locators", async ({ page }) => {
   // page.getByPlaceholder() - to lacate as input element by its placeholder text.
   await page.getByPlaceholder("Username").fill("Admin");
   await page.getByPlaceholder("Password").fill("admin123");
+
+  // page.getByRole() - to locate an element by its ARIA role.
+  await page.getByRole("button", { type: "submit" }).click();
 });
