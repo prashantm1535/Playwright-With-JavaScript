@@ -3,16 +3,16 @@ const { test, expect } = require("@playwright/test");
 test("LocatingMultipleElements", async ({ page }) => {
   await page.goto("https://www.demoblaze.com/index.html");
 
-  /*
   const links = await page.$$("a");
 
   for (const link of links) {
     const linkText = await link.textContent();
     console.log(linkText);
-    }
-*/
+  }
 
-  const products = await page.$$("//div[@id='tbodyid']//div//h4/a");
+  // locating all the products displayed on home page using Xpath
+  await page.waitForSelector("#tbodyid h4 a");
+  const products = await page.$$("//div[@id='tbodyid']//h4/a");
 
   for (const product of products) {
     const productName = await product.textContent();
