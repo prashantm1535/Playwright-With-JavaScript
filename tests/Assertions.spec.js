@@ -32,4 +32,8 @@ test("assertions", async ({ page }) => {
     "#NewsLetterSubscriptions_0__IsActive",
   );
   await expect(newsletterCheckbox).toBeChecked();
+
+  // 6) expect(locator).toHaveAttribute() - to verify the attribute of the element
+  const registerButton = await page.locator("#register-button");
+  await expect(registerButton).toHaveAttribute("type", "submit");
 });
