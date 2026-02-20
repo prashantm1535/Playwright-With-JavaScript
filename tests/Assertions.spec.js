@@ -55,4 +55,8 @@ test("assertions", async ({ page }) => {
   const emailInput = page.locator("#Email");
   await emailInput.fill("test@example.com");
   await expect(emailInput).toHaveValue("test@example.com");
+
+  // 10) expect(locator).toHaveCount() - to verify the count of the elements
+  const productItems = page.locator(".product-item");
+  await expect(productItems).toHaveCount(0); // as we are on register page, there should be no product items
 });
