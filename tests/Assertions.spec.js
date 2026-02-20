@@ -13,4 +13,9 @@ test("assertions", async ({ page }) => {
   // 3) expect(locator).toBeVisible() - to verify the visibility of the element
   const logoElement = await page.locator(".header-logo");
   await expect(logoElement).toBeVisible();
+
+  // 4.1) expect(locator).toBeEnabled() - to verify the element is enabled
+  // 4.2) expect(locator).toBeDisabled() - to verify the element is disabled
+  const searchBox = await page.locator("#small-searchterms");
+  await expect(searchBox).toBeEnabled();
 });
