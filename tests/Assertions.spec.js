@@ -42,4 +42,8 @@ test("assertions", async ({ page }) => {
   // 7) expect(locator).toHaveText() - to verify the text of the element
   const registerHeading = page.locator("#register-button");
   await expect(registerHeading).toHaveText("Register");
+
+  // 8) expect(locator).toContainText() - to verify the text of the element contains the expected text
+  const registerHeading2 = page.locator("#register-button");
+  await expect(registerHeading2).toContainText("Register");
 });
