@@ -6,4 +6,7 @@ test("assertions", async ({ page }) => {
 
   // 1) expect(page).toHaveURL() - to verify the url of the page
   await expect(page).toHaveURL("https://demo.nopcommerce.com/register");
+
+  // 2) expect(page).toHaveTitle() - to verify the title of the page
+  await expect(page).toHaveTitle("nopCommerce demo store. Register");
 });
