@@ -18,4 +18,18 @@ test("assertions", async ({ page }) => {
   // 4.2) expect(locator).toBeDisabled() - to verify the element is disabled
   const searchBox = await page.locator("#small-searchterms");
   await expect(searchBox).toBeEnabled();
+
+  // 5.1) expect(locator).toBeChecked() - to verify the checkbox is checked
+  // 5.2) expect(locator).toBeUnchecked() - to verify the checkbox is unchecked
+
+  // check the radio button
+  const genderMaleRadioButton = await page.locator("#gender-male");
+  await genderMaleRadioButton.check(); // to check the radio button
+  await expect(genderMaleRadioButton).toBeChecked();
+
+  // check the checkbox
+  const newsletterCheckbox = await page.locator(
+    "#NewsLetterSubscriptions_0__IsActive",
+  );
+  await expect(newsletterCheckbox).toBeChecked();
 });
