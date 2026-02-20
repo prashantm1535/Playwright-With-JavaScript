@@ -18,7 +18,9 @@ test("Buitin Locators", async ({ page }) => {
   await page.getByRole("button", { type: "submit" }).click();
 
   // page.getByText() - to locate an element by its text content.
-  await expect(
-    await page.getByText("Dino da Silvas Sauro Automation Tester"),
-  ).toBeVisible();
+
+  const name = await page
+    .locator("//p[@class='oxd-userdropdown-name']")
+    .textContent();
+  await expect(await page.getByText(name)).toBeVisible();
 });
