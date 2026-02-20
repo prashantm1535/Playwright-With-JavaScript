@@ -2,7 +2,9 @@ const { test, expect } = require("@playwright/test");
 
 test("assertions", async ({ page }) => {
   // open app url
-  await page.goto("https://demo.nopcommerce.com/register");
+  await page.goto("https://demo.nopcommerce.com/register", {
+    waitUntil: "domcontentloaded",
+  });
 
   // 1) expect(page).toHaveURL() - to verify the url of the page
   await expect(page).toHaveURL("https://demo.nopcommerce.com/register");
@@ -23,17 +25,21 @@ test("assertions", async ({ page }) => {
   // 5.2) expect(locator).toBeUnchecked() - to verify the checkbox is unchecked
 
   // check the radio button
-  const genderMaleRadioButton = await page.locator("#gender-male");
+  const genderMaleRadioButton = page.locator("#gender-male");
   await genderMaleRadioButton.check(); // to check the radio button
   await expect(genderMaleRadioButton).toBeChecked();
 
   // check the checkbox
-  const newsletterCheckbox = await page.locator(
+  const newsletterCheckbox = page.locator(
     "#NewsLetterSubscriptions_0__IsActive",
   );
   await expect(newsletterCheckbox).toBeChecked();
 
   // 6) expect(locator).toHaveAttribute() - to verify the attribute of the element
-  const registerButton = await page.locator("#register-button");
+  const registerButton = page.locator("#register-button");
   await expect(registerButton).toHaveAttribute("type", "submit");
+
+  // 7) expect(locator).toHaveText() - to verify the text of the element
+  const registerHeading = page.locator("#register-button");
+  await expect(registerHeading).toHaveText("Register");
 });
